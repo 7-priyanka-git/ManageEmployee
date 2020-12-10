@@ -1,0 +1,325 @@
+<h2 class="text-center">Add Employee Form</h2>
+
+<div class="jumbotron">
+    <div class="container">
+            <div class="col-md-3">
+            </div>
+
+            <div class="col-md-6">
+                <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+
+
+                    <div class="form-group">
+                        <label for="name" class="required">Name</label>
+                        <input formControlName="name" id="name" type="text" class="form-control">
+                        <div *ngIf="f.name.touched && f.name.invalid" class="alert alert-danger">
+                            <div *ngIf="f.name.errors.required">Name is required.</div>
+                            <div *ngIf="f.name.errors.min">Name should be 3 character.</div>
+                            <div *ngIf="f.name.errors.cannotContainSpace">Name can not contain space.</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input formControlName="username" id="username" type="text" class="form-control">
+                        <div *ngIf="f.username.touched && f.username.invalid" class="alert alert-danger">
+                            <div *ngIf="f.username.errors.required">Username is required.</div>
+                            <div *ngIf="f.username.errors.minlength">Username should be 3 character.</div>
+                            <div *ngIf="f.username.errors.cannotContainSpace">Username can not contain space.</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input formControlName="email" id="email" type="email" class="form-control">
+                        <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+                            <div *ngIf="f.email.errors.required">Email is required.</div>
+                            <div *ngIf="f.email.errors.minlength">Email should be 3 character.</div>
+                            <div *ngIf="f.email.errors.cannotContainSpace">Email can not contain space.</div>
+                        </div>
+                    </div>
+
+                    <div formGroupName="address">
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input formControlName="city" id="city" type="text" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label for="state">State</label>
+                                <input formControlName="state" id="state" type="text" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label for="zip">ZipCode</label>
+                                <input formControlName="zip" id="state" type="text" class="form-control">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input formControlName="phone" id="phone" type="number" class="form-control">
+                            <div *ngIf="f.phone.touched && f.phone.invalid" class="alert alert-danger">
+                                <div *ngIf="f.phone.errors.required">Phone Number is required.</div>
+                                <div *ngIf="f.phone.errors.minlength">Phone Number should be 10 character.</div>
+                                <div *ngIf="f.phone.errors.cannotContainSpace">Phone Number can not contain space.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="website">Website</label>
+                            <input formControlName="website" id="website" type="text" class="form-control">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input formControlName="company" id="company" type="text" class="form-control">
+
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-3">
+
+        </div>
+    </div>
+<!-- </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="addEmployeeForm">
+    <h1>Add Employee</h1>
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <table>
+            <div>
+                <tr>
+                    <td>
+                        <label>
+                            Name:
+                        </label>
+                    </td>
+                    <td>
+                        <input type="text" id="name" class="form-control" formControlName="name" required>
+                    </td>
+
+                    <div *ngIf="profileForm.controls.name.errors" class="text-danger">
+                        <div *ngIf="profileForm.controls.name.errors.required">
+                            FullName is required
+                        </div>
+                    </div>
+                </tr>
+            </div>
+
+            <br>
+            <div>
+                <tr>
+                    <td>
+                        <label>
+                            Username:
+                        </label>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" formControlName="username" required>
+                    </td>
+                </tr>
+            </div>
+            <br>
+            <div>
+                <tr>
+                    <td>
+                        <label>
+                            Email:
+                        </label>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" formControlName="email" required>
+                    </td>
+                </tr>
+            </div>
+
+            <div formGroupName="address">
+                <tr>
+                    <h3>Address</h3>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>
+                            Street:
+                        </label>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" formControlName="street" required>
+                    </td>
+                </tr>
+
+                <br>
+
+                <tr>
+                    <td>
+                        <label>
+                            City:
+                        </label>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" formControlName="city" required>
+                    </td>
+                </tr>
+
+                <br>
+
+                <tr>
+                    <td>
+                        <label>
+                            State:
+                        </label>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" formControlName="state" required>
+                    </td>
+                </tr>
+
+                <br>
+
+                <tr>
+                    <td>
+                        <label>
+                            Zip Code:
+                        </label>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" formControlName="zip" required>
+                    </td>
+                </tr>
+            </div>
+
+            <br>
+            <div>
+                <tr>
+                    <td>
+                        <label>
+                            Phone:
+                        </label>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" formControlName="phone" required>
+                    </td>
+                </tr>
+            </div>
+
+            <br>
+            <div>
+                <tr>
+                    <td>
+                        <label>
+                            Website:
+                        </label>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" formControlName="website" required>
+                    </td>
+                </tr>
+            </div>
+
+            <br>
+            <div>
+                <tr>
+                    <td>
+                        <label>
+                            Company:
+                        </label>
+                    </td>
+                    <td>
+                        <input type="text" formControlName="company">
+                    </td>
+                </tr>
+            </div>
+            <button type="submit">Submit</button>
+        </table>
+    </form>
+</div> -->

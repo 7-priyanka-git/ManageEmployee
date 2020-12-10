@@ -1,0 +1,17 @@
+.cdk-global-overlay-wrapper {
+    justify-content: center;
+    align-items: center;
+    background-color: darkgray;
+}
+button{
+    margin: 10px;
+}
+
+.mat-dialog-content{
+    display: block;
+    margin: 0 -24px;
+    margin:10px 10px;
+    padding: 0 24px;
+    max-height: 65vh;
+    /* overflow: auto; */
+}

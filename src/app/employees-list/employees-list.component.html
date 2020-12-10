@@ -1,0 +1,26 @@
+<!-- <div *ngFor = "let employee of employees"> -->
+
+<!-- <li>{{employee |json}}</li> -->
+<h1 id="listOfEmployees">List of Employees </h1>
+<button  id="addButton" (click)="addEmployee()" >Add Employee</button>
+
+<div class="list">
+  <div class="card" *ngFor="let employee of employees">
+    <div class="container">
+      <h4><b>{{employee.name}}</b></h4>
+      <label>Id :</label>
+      <span>{{employee.id}}</span>
+      <!-- <button (click)="getDetails()" id="details">Details</button> -->
+      <div>
+        <button mat-button (click)="openDialog(employee)" id="confirm">Delete</button>
+      </div>
+      <!-- <p>Architect & Engineer</p> -->
+    </div>
+  </div>
+
+  <!-- </div> -->
+</div>
+
+
+
+
